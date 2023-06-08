@@ -1,0 +1,164 @@
+<h1>Cricketinfo Assignment</h1>
+
+<div class="container justify-content-center shadow " style="margin-top: 20px;">
+    <div class="mt-5">
+  <h2 class="text-center" style="color: blueviolet; margin-top: 40px; ">🏏Cricbuzz</h2>
+  </div>
+  <hr />
+  <div class="row">
+    <div class="col" style="margin-left: 50px;">
+      <img src="{{ venue.imageUrl }}" alt="cricket" style="border-radius: 20px 10px;" />
+    </div>
+    <div class="col mt-3 border-1">
+      <div>
+        <table class="table" style="border: 1px">
+          <tr>
+            <td>Ground</td>
+            <td>
+              <b>{{ venue.ground }}</b>
+            </td>
+          </tr>
+          <tr>
+            <td>Ground Name</td>
+            <td>
+              <b>{{ venue.knownAs }}</b>
+            </td>
+          </tr>
+          <tr>
+            <td>Country</td>
+            <td>
+              <b>{{ venue.country }}</b>
+            </td>
+          </tr>
+          <tr>
+            <td>HomeTeam</td>
+            <td>
+              <b>{{ venue.city }}</b>
+            </td>
+          </tr>
+        </table>
+      </div>
+  
+    </div>
+  </div>
+  <hr>
+  <!-- match details start from here -->
+  <div class="row">
+  
+  
+  <div class="col-md-7 ">
+    <div>
+         <h4 style="color: aqua;margin-left: 20px;" >Match Details</h4>
+      </div>
+  
+    <table class="table " style="margin-left: 40px;">
+  
+        <tr>
+        <td>Match Id</td>
+        <td><b>{{matchInfo.matchId}}</b></td>
+     </tr>
+     <tr>
+        <td>Series</td>
+        <td><b>{{matchInfo.series.name}}</b></td>
+     </tr>
+     <tr>
+        <td>Match Format</td>
+        <td><b>{{matchInfo.matchFormat}}</b></td>
+     </tr>
+     <tr>
+        <td>Match Year</td>
+        <td><b>{{matchInfo.year}}</b></td>
+     </tr>
+     <tr>
+        <td>Teams</td>
+        <td><b>{{team1.name}} vs {{team2.name}}</b></td>
+     </tr>
+     <tr>
+        <td>Match Status</td>
+      <td><h6 class="text-danger">{{matchInfo.status}} </h6>
+      </td> 
+     </tr>
+  </table>
+  
+  </div>
+  
+  <div class="">
+     <hr>
+     <div>
+     <h5 style="color: tomato;margin-left: 20px;">Team {{team1.name}} Details</h5>
+     </div>
+     <div class="col-md-7 " style="margin-left: 60px;">
+    <table class="table table-striped">
+     <thead>
+        <tr>
+         <th>Player Id</th>
+         <th>Name</th>
+         <th>Team Name</th>
+         <th>Batting style</th>
+         <th>Role</th>
+  
+     </thead>
+         <tbody>
+            <ng-container *ngFor="let t1 of playerDetails1">
+            <tr>
+                <td>{{t1.id}}</td>
+                <td>{{t1.fullName}}</td>
+                <td>{{t1.teamName}}</td>
+                <td>{{t1.battingStyle}}</td>
+                <td>{{t1.role}}</td>
+  
+            </tr>
+        </ng-container>
+         </tbody>
+  </table>
+  </div>
+  </div>
+  
+  <!-- team 2 info -->
+  <div class="">
+    <hr>
+    <div>
+    <h5 style="color: rgb(127, 224, 89);margin-left: 20px;">Team {{team1.name}} Details</h5>
+    </div>
+    <div class="col-md-7 " style="margin-left: 60px;">
+   <table class="table table-striped">
+    <thead>
+       <tr>
+        <th>Player Id</th>
+        <th>Name</th>
+        <th>Team Name</th>
+        <th>Batting style</th>
+        <th>Role</th>
+  
+    </thead>
+        <tbody>
+           <ng-container *ngFor="let t1 of playerDetails2">
+           <tr>
+               <td>{{t1.id}}</td>
+               <td>{{t1.fullName}}</td>
+               <td>{{t1.teamName}}</td>
+               <td>{{t1.battingStyle}}</td>
+               <td>{{t1.role}}</td>
+  
+           </tr>
+       </ng-container>
+        </tbody>
+  </table>
+  </div>
+  </div>
+  <!-- match result stated here -->
+  
+  
+  <div >
+    <hr>
+      <h3 class="text-success" style="margin-left: 30px;">Result of the match</h3>
+  
+       <div class="" style="margin-left: 60px;">
+      <h6 class="text-danger">{{matchInfo.status}} </h6>
+      <!-- <h6>Man Of The match : <i>{{matchInfo.playersOfTheMatch[0].name}}</i> </h6> -->
+      </div>
+  </div>
+  </div>
+  
+  </div>
+  

@@ -1,0 +1,19 @@
+<div class="container">
+    <header class="header">GIPHY</header>
+  
+    <div class="center">
+      <h6 class="search-header">Search for GIFs</h6>
+      <div class="search-container">
+        <input type="text" [(ngModel)]="searchTerm" placeholder="Search GIFs" class="search-input">
+        <button class="search-button" (click)="onSearchClick()" >Search</button>
+      </div>
+    </div>
+  
+    <div class="image-gallery">
+      <div class="image-container" *ngFor="let gif of gifs">
+        <div class="gif-container">
+          <img [src]="gif.original.url" alt="GIF">
+        </div>
+      </div>
+    </div>
+  </div> 

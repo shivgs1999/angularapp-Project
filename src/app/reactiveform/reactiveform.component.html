@@ -1,0 +1,71 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-left rounded shadow py-5">
+            <h2 class="font-italic text-dark bg-info text-center">Reactive form</h2>
+            <form [formGroup]="myReactiveForm" (ngSubmit)="OnSubmit()">
+                <div formGroupName="userDetails">
+                    <div class="form-group">
+                        <label class="fw-bold" for="username">UserName</label>
+                        <input type="text" class="form-control" formControlName="username"
+                            placeholder="Enter user name">
+                        <small class="text-danger"
+                            *ngIf="!myReactiveForm.get('userDetails.username').valid && myReactiveForm.get('userDetails.username').touched">
+                            <small *ngIf="myReactiveForm.get('userDetails.username').errors['required']">Please enter
+                                user name</small>
+                            <small *ngIf="myReactiveForm.get('userDetails.username').errors['namesNotAllowed']">User
+                                name not allowed{{myReactiveForm.get('userDetails.username').value}}</small>
+                        </small>
+                    </div>
+                    <div class="form-group">
+                        <label class="fw-bold" for="email">Email</label>
+                        <input type="text" class="form-control" formControlName="email" placeholder="Enater email">
+                        <small class="text-danger" *ngIf="!myReactiveForm.get('userDetails.email').valid && myReactiveForm.get('userDetails.email').touched">
+                            <small *ngIf="myReactiveForm.get('userDetails.email').errors['required']">Please enter email address</small>    
+                            <small *ngIf="myReactiveForm.get('userDetails.email').errors['emailNotAllowed']">{{myReactiveForm.get('userDetails.email').value}} Email address not allowed</small>   
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="fw-bold" for="course">Select Course</label>
+                    <select formControlName="course" class="form-control">
+                        <option value="Angular">Angular</option>
+                        <option value="HTML">HTML</option>
+                        <option value="JavaScript">JavaScript</option>
+
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="fw-bold" for="gender">Gender</label>
+                    <div class="custom-control custom-radio" *ngFor="let gender of genders">
+                        <input class="custom-control-input" type="radio" formControlName="gender"
+                            value="{{gender.value}}" id="{{gender.id}}">
+                        <label for="{{gender.id}}">{{gender.value}}</label>
+                    </div>
+                </div>
+
+                <!-- Skills -->
+
+                <div class="form-group" formArrayName="skills">
+                    <label class="fw-bold">Skills</label> <br>
+                    <ng-container *ngFor="let skill of myReactiveForm.get('skills').controls; index as i">
+                        <input formControlName="{{i}}" type="text" class="form-control mt-2" placeholder="Add Skills">
+                    </ng-container>
+                    <button class="btn btn-light btn-sm mt-4 btn-add" (click)="OnAddSkills()"><i>+</i> Add
+                        Skills</button>&nbsp;&nbsp;&nbsp;
+                    <button class="btn btn-light btn-sm mt-4 btn-add" (click)="OnRemoveSkills(i)">Remove</button>
+                </div>
+                <br>
+                <button class="btn btn-success">Submit</button>
+            </form>
+        </div>
+        <div class="row justify-content-center mt-2" *ngIf="isSubmitted">
+            <div class="col-md-6 rounded shadow py-4">
+                <h2>Reactive Form Data</h2>
+                <p>User Name : <strong>{{myReactiveForm.get('userDetails.username').value}}</strong></p>
+                <p>User Email : <strong>{{myReactiveForm.get('userDetails.email').value}}</strong></p>
+                <p>Selected Course : <strong>{{myReactiveForm.get('course').value}}</strong></p>
+                <p>Gender : <strong>{{myReactiveForm.get('gender').value}}</strong></p>
+            </div>
+        </div>
+    </div>
+</div>

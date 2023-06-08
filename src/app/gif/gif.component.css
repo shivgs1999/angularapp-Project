@@ -1,0 +1,74 @@
+.container {
+    background-color: black;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    perspective: 800px;
+  }
+  
+  .header {
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 32px;
+    transform: rotateX(15deg);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .center {
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .search-header {
+    color: white;
+    font-size: 24px;
+    transform: rotateX(15deg);
+    margin-bottom: 10px;
+  }
+  
+  .search-input {
+    margin: 10px 20px;
+    padding: 10px;
+    border: none;
+    background-color: #333;
+    color: white;
+    transform: rotateX(15deg);
+  }
+  
+  .image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .image-container {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  .gif-container {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .gif-container img {
+    width: 100%;
+    height: auto;
+  }
+  .search-button {
+    background-color: #4CAF50; /* Set the background color */
+    color: white; /* Set the text color */
+    padding: 10px 20px; /* Set the padding */
+    border: none; /* Remove the border */
+    cursor: pointer; /* Add a cursor pointer on hover */
+    border-radius: 5px; /* Add some border radius for a rounded appearance */
+  }
+  
+  .search-button:hover {
+    background-color: #e60d0d; /* Change the background color on hover */
+  }

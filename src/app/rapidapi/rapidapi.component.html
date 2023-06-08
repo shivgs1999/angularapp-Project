@@ -1,0 +1,71 @@
+<!-- 
+<h3> Array of object: News From API (Table 1) </h3>
+<br>
+<table class="table table-striped border border-danger">
+    <thead>
+        <tr class="border border-danger">
+            <th class="border border-danger">UUID</th>
+            <th class="border border-danger">Title</th>
+            <th class="border border-danger">Publisher</th>
+            <th class="border border-danger">Link</th>
+        </tr>
+    </thead>
+    <tbody> 
+        <tr *ngFor="let new of news">
+            <td class="border border-danger">{{new.uuid}}</td>
+            <td class="border border-danger">{{new.title}}</td>
+            <td class="border border-danger">{{new.publisher}}</td>
+            <td class="border border-danger">{{new.link}}</td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+<h3> Array of object Qupotes From API (Table 2) </h3>
+<br>
+<table class="table table-striped border border-primary">
+    <thead>
+        <tr class="border border-primary">
+            <th class="border border-primary">Exchange</th>
+            <th class="border border-primary">Short Name</th>
+            <th class="border border-primary">Quote Type</th>
+            <th class="border border-primary">Symbole</th>
+            <th class="border border-primary">Index</th>
+        </tr>
+    </thead>
+    <tbody> 
+        <tr *ngFor="let quote of quotes">
+            <td class="border border-primary">{{quote.exchange}}</td>
+            <td class="border border-primary">{{quote.shortname}}</td>
+            <td class="border border-primary">{{quote.quoteType}}</td>
+            <td class="border border-primary">{{quote.symbol}}</td>
+            <td class="border border-primary">{{quote.index}}</td>
+        </tr>
+    </tbody>
+  </table> -->
+
+
+    <table class="table table-striped border border-primary">
+        <thead>
+            <tr class="border border-primary">
+                <th class="border border-primary"> matchId </th>
+                <th class="border border-primary"> seriesId </th>
+                <th class="border border-primary"> seriesName </th>
+                <th class="border border-primary"> matchFormat </th>
+                <th class="border border-primary"> state </th>
+                <th class="border border-primary"> status </th>            
+            </tr>
+        </thead>
+        <tbody> 
+            <tr *ngFor="let match of matchInfo">
+                <td class="border border-primary">{{match.matchId}}</td>
+                <td class="border border-primary">{{match.seriesId}}</td>
+                <td class="border border-primary">{{match.seriesName}}</td>
+                <td class="border border-primary">{{match.matchFormat}}</td>
+                <td class="border border-primary">{{match.state}}</td>
+                <td class="border border-primary">{{match.status}}</td>
+            </tr>
+        </tbody>
+      </table>
+  

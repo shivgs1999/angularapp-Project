@@ -1,0 +1,24 @@
+{{heading}}
+<!-- <div class="container">
+    <select>
+        <option *ngFor= "let country of countrys;"> {{country.cuntryName}} </option>
+    </select>
+
+    <select >
+        <option *ngFor= "let state of states;"> {{state.stateName}} </option>
+    </select>
+</div>  -->
+
+<div class="select">
+    <h4 class="country">Select Country</h4> 
+<select (change)="onClick($event)">
+    <option value="">Select Country</option>
+    <option value="{{c.id}}" *ngFor="let c of countries">{{c.name}}</option>
+</select>
+
+
+<select class="sele">
+    <option value="">Select States</option>
+    <option value="{{s.id}}" *ngFor="let s of states">{{s.name}}</option>
+</select>
+</div>

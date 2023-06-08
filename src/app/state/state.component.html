@@ -1,0 +1,109 @@
+<div class="container">
+    <form [formGroup]="myreactiveform">
+        <mat-drawer-container class="example-container ">
+            <mat-drawer mode="side" opened>
+                <label for="state">
+                    <h4>Select State</h4>
+                </label>
+                <br>
+                <mat-form-field class="state">
+                    <mat-label>Select</mat-label>
+                    <mat-select formControlName="state">
+                        <ng-container *ngFor="let state of states; index as i">
+                            <mat-option value="{{state.state}}" (click)="stateMethod(state.id)">{{
+                                state.state}}</mat-option>
+                        </ng-container>
+                    </mat-select>
+                </mat-form-field>
+                <br>
+                <label for="state">
+                    <h4>Select Division</h4>
+                </label>
+                <br>
+                <mat-form-field class="division">
+                    <mat-label>Select</mat-label>
+                    <mat-select formControlName="division">
+                        <ng-container *ngFor="let division of divisions">
+                            <mat-option (click)="divisionMethod(division.id)" [value]="division.division">
+                                {{division.division}} </mat-option>
+                        </ng-container>
+                    </mat-select>
+                </mat-form-field>
+                <br>
+                <label for="state">
+                    <h4>Select district</h4>
+                </label>
+                <br>
+                <mat-form-field class="district">
+                    <mat-label>Select</mat-label>
+                    <mat-select formControlName="district">
+                        <ng-container *ngFor="let district of districts">
+                            <mat-option (click)="districtMethod(district.id)"
+                                value="{{district.district}}">{{district.district}}</mat-option>
+                        </ng-container>
+                    </mat-select>
+                </mat-form-field>
+                <br>
+                <label for="state">
+                    <h4>Select Taluka</h4>
+                </label>
+                <br>
+                <mat-form-field class="taluka">
+                    <mat-label>Select</mat-label>
+                    <mat-select formControlName="taluka">
+                        <ng-container *ngFor="let taluka of talukas">
+                            <mat-option (click)="talukhaMethod(taluka.id)"
+                                value="{{taluka.m_Taluka}}">{{taluka.m_Taluka}}</mat-option>
+                        </ng-container>
+                    </mat-select>
+                </mat-form-field>
+                <br>
+                <label for="state">
+                    <h4>Select Village</h4>
+                </label>
+                <br>
+                <mat-form-field class="village">
+                    <mat-label>Select</mat-label>
+                    <mat-select formControlName="village">
+                        <ng-container *ngFor="let village of villages">
+                            <mat-option value="{{village.name}}">{{village.name}}</mat-option>
+                        </ng-container>
+                    </mat-select>
+                </mat-form-field>
+                <br>
+                <button id="btn" class="btn btn-success" (click)="submitData(myreactiveform.value)">Submit</button>
+                <button id="btn" type="reset" class="btn btn-secondary " (click)="resetData()">Clear</button>
+
+            </mat-drawer>
+            <mat-drawer-content>
+                <h2 class="heading">Stete Dropdown Assignment</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Sr.No</th>
+                            <th scope="col">State</th>
+                            <th scope="col">Division</th>
+                            <th scope="col">District</th>
+                            <th scope="col">Taluka</th>
+                            <th scope="col">Village</th>
+                            <th scope="col">Edit</th>
+                            <th scope="col">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of newArr; index as i">
+                            <td>{{i+1}}</td>
+                            <td>{{item.state}}</td>
+                            <td>{{item.division}}</td>
+                            <td>{{item.district}}</td>
+                            <td>{{item.taluka}}</td>
+                            <td>{{item.village}}</td>
+                            <td> <button class="btn btn-outline-success" (click)="onEdit(item,i)">Edit</button></td>
+                            <td><button class="btn btn-outline-danger" (click)="onDelete(item)">Delete</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </mat-drawer-content>
+        </mat-drawer-container>
+    </form>
+</div>

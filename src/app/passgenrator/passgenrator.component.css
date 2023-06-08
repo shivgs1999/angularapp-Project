@@ -1,0 +1,10 @@
+fieldset {
+    width: max-content;
+    border: 1px double black;
+    padding: 20px;
+    margin: 10px;
+}
+label {
+    margin: 2px 20px;
+    
+}

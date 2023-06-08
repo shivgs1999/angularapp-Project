@@ -1,0 +1,133 @@
+
+  <div class="row justify-content-center">
+    <div class="col-md-6 text-left rounded shadow py-5">
+      <div class="container bg-light shadow-lg my-2 border border-danger">
+        <h2 id="heading" class="border border-danger d-inline-flex p-2 mb-4">Registration Form</h2>
+
+        <!-- //first Name -->
+        <form class="border border-secondary" #userForm="ngForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="name" class="fw-bold">First Name</label>
+            <input type="text" class="form-control" [(ngModel)]="userModel.firstName" name="firstName"
+              #firstname="ngModel" required minlength="5" maxlength="10" />
+
+            <!-- {{userModel| json}} -->
+            <div class="text-danger" *ngIf="firstname.touched && !firstname.valid">
+              <small *ngIf="firstname.errors.required">*FirstName is required</small>
+              <small *ngIf="firstname.errors.minlength">*minimum length should be of 5 char</small>
+              <small *ngIf="firstname.errors.maxlength">*maximum length cannot be more than 10 character</small>
+            </div>
+          </div>
+
+          <!-- //Last Name -->
+          <div class="form-group">
+            <label for="name" class="fw-bold">Last Name</label>
+            <input type="text" class="form-control" [(ngModel)]="userModel.lastName" name="lastName" #lastname="ngModel"
+              required minlength="5" maxlength="10" />
+            <div class="text-danger" *ngIf="lastname.touched && !lastname.valid">
+              <small *ngIf="lastname.errors.required">*Last Name is required</small>
+              <small *ngIf="lastname.errors.minlength">*minimum length should be of 5 char</small>
+              <small *ngIf="lastname.errors.maxlength">*maximum length cannot be more than 10 character</small>
+
+            </div>
+          </div>
+
+          <!-- //Age -->
+          <div class="form-group">
+            <label for="Age" class="fw-bold">Age</label>
+            <input class="form-control" type="number" [(ngModel)]="userModel.age" name="age" #age="ngModel" required
+              min="17" max="20" pattern="^(1[8-9]|[2-5][0-9]|60)$" />
+            <div *ngIf="age.invalid && (age.dirty || age.touched)">
+              <small class="text-danger" *ngIf="age.errors.required">*Age is required.</small>
+              <small class="text-danger" *ngIf="age.errors.pattern">Age should be in between 18 to 60.</small>
+              <!-- <small class="text-danger" *ngIf="age.errors.max">Age should be at most 20 years old.</small> -->
+
+            </div>
+          </div>
+
+          <!-- //Email -->
+          <div class="form-group">
+            <label for="name" class="fw-bold">Email</label>
+            <input type="email" class="form-control" name="email" #email="ngModel" [(ngModel)]="userModel.email"
+              pattern="[a-zA-Z0-9._%+-]+@codemind\.com$" required />
+            <div *ngIf="email.invalid && (email.dirty || email.touched)">
+              <small class="text-danger" *ngIf="email.errors.required">*Email is required.</small>
+              <small class="text-danger" *ngIf="email.errors.pattern">Email must be a valid @codemind.com
+                address.</small>
+            </div>
+          </div>+
+
+          <!-- //Phone -->
+          <div class="form-group">
+            <label for="tel" class="fw-bold">Phone</label>
+            <input type="number" class="form-control" name=phone [(ngModel)]="userModel.phone" #phone="ngModel" required
+              pattern="^[0-9]{10}$" />
+            <div class="text-danger" *ngIf="phone.invalid && (phone.dirty || phone.touched)">
+              <small *ngIf="phone.errors.required ">*Phone number is required</small>
+              <small *ngIf="phone.errors.pattern ">Phone should be of 10 digit</small>
+            </div>
+          </div>
+
+          <!-- //City -->
+          <div class="form-group">
+            <label for="city" class="fw-bold">City</label>
+            <select name="city" class=" btn btn-warning dropdown-toggle  custom-select my-3" required
+              [(ngModel)]="selectedCity" #cityInput="ngModel">
+              <option value="" disabled selected>Choose a city</option>
+              <option *ngFor="let city of city" [value]="city">{{ city }}</option>
+            </select>
+            <div *ngIf="cityInput.invalid && (cityInput.dirty || cityInput.touched)" class="text-danger">
+              <div *ngIf="cityInput.errors.required">*Please select a city.</div>
+            </div>
+          </div>
+
+
+          <!-- //Gender -->
+          <div class="form-group">
+            <label class="fw-bold">Select Gender</label> <br />
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="gender" id="male" value="male" required /> &nbsp;&nbsp;
+              <span class="form-check-label fw-bold" for="male"> Male </span>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="gender" id="female" value="female" /> &nbsp;&nbsp;
+              <span class="form-check-label fw-bold" for="female"> Female </span>
+            </div>
+          </div>
+
+          <!-- //Password -->
+         <div class="form-group" [class.has-error]="password.touched && password.invalid">
+          <label for="password" class="control-label fw-bold">Password</label>
+          <input id="password" required type="password" class="form-control" name="password"
+            [(ngModel)]="userModel.password" #password="ngModel">
+          <small class="help-block text-danger" *ngIf="password.touched && password.errors?.required">
+            *Password is required
+          </small>
+        </div>
+
+
+          <div class="form-group" [class.has-error]="confirmPassword.touched && confirmPassword.invalid">
+            <label for="confirmPassword" class="control-label fw-bold">Confirm Password</label>
+            <input name="confirmPassword" appConfirmEqualValidator="password" required id="confirmPassword" type="password" class="form-control" 
+                   [(ngModel)]="userModel.confirmPassword" #confirmPassword="ngModel">
+            <span class="help-block text-danger" *ngIf="confirmPassword.touched && confirmPassword.errors?.required">
+              *Confirm Password is required
+            </span>
+            <span class="help-block text-danger" *ngIf="confirmPassword.touched && confirmPassword.errors?.notEqual &&
+            !confirmPassword.errors?.required">
+              Password and Confirm Password does not match
+            </span>
+          </div>
+
+          <!-- //Button -->
+          <div class="my-4 p-2">
+
+            <button class="btn btn-primary mx-3 fw-bold" type="submit" [disabled]="userForm.invalid">Submit</button>
+
+            <button class="btn btn-danger mx-3 fw-bold" (onClick)="onReset()">Reset</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+

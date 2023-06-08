@@ -1,0 +1,171 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <!-- // String Interpolation -->
+  <h1 appCustom>Welcome to {{ title }}!</h1>
+
+  <h3> Project name: {{ project }}. </h3>
+
+  <h3> Developer Name: {{ name.toUpperCase() }} </h3>
+
+
+  <div> {{ 15 + 13 }} </div>
+
+  <div> {{getName()}}</div>
+  // Property Binding 
+  <!-- <div>
+    <img [src]="imgURL" alt="" class="imgurl">
+  </div> -->
+
+  // Event binding 
+
+  <input (blur)="changeImage($event)" [value]="imgURL">
+  <br><br>
+  <button (click)="show()"> Click Me !! </button>
+  <br><br>
+     
+  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="> 
+
+
+
+<!--  
+</div>
+<h2>Here are some links to help you start: </h2>
+<ul>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
+  </li>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
+  </li>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
+  </li>
+</ul> 
+   <hr>
+<mat-slide-toggle>Toggle me!</mat-slide-toggle>
+<hr>
+<mat-form-field appearance="fill">
+  <mat-label>Choose a date</mat-label>
+  <input matInput [matDatepicker]="picker">
+  <mat-hint>MM/DD/YYYY</mat-hint>
+  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+<hr>
+<h3> Age Calculator </h3>
+<label> <strong>Select the Date:</strong>  </label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<input type="date" [(ngModel)]="age">
+<br><br>
+<button class="btn btn-primary" (click)="ageCalculator()">Calculate Age</button>
+<p *ngIf="age">Today You are {{showAge}} Years Old</p>
+<hr>
+<button class="btn btn-success" (click)="getUserData()">GetUser Data</button>  -->
+
+
+<!-- <hr>
+<app-passgenrator></app-passgenrator> -->
+<!-- <hr>
+<app-test2></app-test2> -->
+
+<!-- <hr>
+<app-ngif></app-ngif> -->
+
+<!-- <hr>
+<app-ngfor></app-ngfor> -->
+
+<!-- <hr>
+<app-ngswitch></app-ngswitch> -->
+
+<!-- <hr>
+<app-ngfor-assign></app-ngfor-assign> -->
+
+<!-- <hr>
+<app-ngstyle></app-ngstyle> -->
+
+<!-- <hr>
+<app-ngclass></app-ngclass> -->
+
+<!-- <hr>
+<app-assigndirictive></app-assigndirictive>  -->
+
+<!-- <hr>
+<app-templetform></app-templetform> -->
+
+<!-- <hr>
+<app-ragistrationform></app-ragistrationform>  -->
+
+<!-- <hr>
+<app-reactiveform></app-reactiveform> -->
+
+<!-- <hr>
+<app-reactiveform-assign></app-reactiveform-assign> -->
+
+<!-- <hr>
+<app-service1></app-service1> -->
+
+<!-- <hr>
+<app-service2></app-service2> -->
+
+<!-- <hr>
+<app-ngfor></app-ngfor> -->
+
+<!-- <hr>
+<app-post></app-post> -->
+
+<!-- <hr>
+<app-todo></app-todo>  -->
+
+<!-- <hr>
+<app-state></app-state> -->
+
+<!-- <hr>
+<app-rapidapi></app-rapidapi>   -->
+
+<!-- <hr>
+<app-cricketinfo></app-cricketinfo> -->
+
+<!-- <hr>
+<app-gif></app-gif> -->
+
+<!-- 
+  <hr> 
+  <div style="text-align: center;">
+    <div class="row">
+      <div class="col-md-6">
+        <app-comp1></app-comp1>
+      </div>
+      <div class="col-md-6">
+        <app-comp2></app-comp2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <app-comp3></app-comp3>
+      </div>
+      <div class="col-md-6">
+        <app-comp4></app-comp4>
+      </div>
+    </div>
+  </div>
+-->
+
+  <hr>
+  <nav>
+    <ul class="nav nav-tabs">
+      <li class="nav-item"><a routerLinkActive="active myclass" routerLink="about-us" class="nav-link">About Us</a></li>
+      <li class="nav-item"><a routerLinkActive="active myclass" routerLink="contact-us" class="nav-link">Contact Us</a></li>
+      <li class="nav-item"><a routerLinkActive="active myclass" routerLink="product" class="nav-link">Product</a></li>
+      <li class="nav-item"><a routerLinkActive="active myclass" routerLink="posts" class="nav-link">Posts</a></li>
+      <li class="nav-item"><a routerLinkActive="active myclass" routerLink="templet" class="nav-link">Login</a></li>
+    </ul>
+  </nav> 
+
+  
+
+  <!-- <hr>
+<app-ngclass></app-ngclass> -->
+
+<!-- <hr>
+<app-wikipedia></app-wikipedia> -->
+
+  <router-outlet></router-outlet>

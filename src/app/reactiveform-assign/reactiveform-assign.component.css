@@ -1,0 +1,13 @@
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+    box-shadow: 0 0 13px #ff000021;
+}
+#fcol{
+    background-color: burlywood;
+}
+#scol {
+    background-color: khaki;
+}
+#tcol{
+    background-color: bisque;
+}

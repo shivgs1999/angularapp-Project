@@ -1,0 +1,33 @@
+<div class="container">
+<fieldset align="center">
+<h1>
+    Password Generator
+</h1>
+<div>
+    <label>Enter Lenght of password</label>
+    <input (input)="onChangeLenth($event.target.value)" type="number">
+</div>
+
+<div>
+    <label>Use Latters</label>
+    <input type="checkbox" (change)="onChangeLetters()" >
+</div>
+<div>
+    <label>Use Numbers</label>
+    <input type="checkbox" (change)="onChangeNumbers()">
+</div>
+<div>
+    <label>Use Symbols</label>
+    <input type="checkbox" (change)="onChangeSymbols()" >
+</div>
+
+<div>
+    <button (click)="onButtonClick()">Generate !</button>
+</div>
+
+<div>
+    <label>Your Password</label> <br>
+    <input type="text" [value]="password">
+</div>
+</fieldset>
+</div>

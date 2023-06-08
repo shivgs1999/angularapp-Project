@@ -1,0 +1,61 @@
+<div id="assign">
+    <div class="container1">
+
+        <h3>Select to see content and unselect to hide</h3>
+        <br>
+
+        <input type="checkbox" (change)="show()" class="chkbx">Add The element
+        <br>
+        <div *ngIf="showMe">
+            <h3>Top three courses out of Five</h3>
+            <ul *ngFor="let course of cources; let i = index" class="list1">
+                <li *ngIf="i < 3">
+                    {{ course }}
+                </li>
+            </ul>
+        </div>
+        <br><br>
+    </div>
+
+    <h3> @ngSwitchCase Dropdown </h3>
+    <div class="container3">
+        <div class="row">
+            <div>
+                <select name="" id="dpd" class="form-control" (change)="getSelectedValue($event)">
+                    <option value="Default">Select Day</option>
+                    <option value="monday">Monday</option>
+                    <option value="tuesday">Tuesday</option>
+                    <option value="wednesday">Wednesday</option>
+                    <option value="thrusday">Thrusday</option>
+                    <option value="friday">Friday</option>
+                    <option value="saturday">Saturday</option>
+                    <option value="sunday">Sunday</option>
+                </select>
+            </div>
+            <div class="col-md-12" [ngSwitch]="selectedValue">
+                <h2 class="text-success" *ngSwitchCase="'monday'">
+                    Monday
+                </h2>
+                <h2 class="text-success" *ngSwitchCase="'tuesday'">
+                    Tuesday
+                </h2>
+                <h2 class="text-success" *ngSwitchCase="'wednesday'">
+                    Wednesday
+                </h2>
+                <h2 class="text-success" *ngSwitchCase="'thrusday'">
+                    Thrusday
+                </h2>
+                <h2 class="text-success" *ngSwitchCase="'friday'">
+                    Friday
+                </h2>
+                <h2 class="text-success" *ngSwitchCase="'saturday'">
+                    Saturday
+                </h2>
+                <h2 class="text-success" *ngSwitchCase="'sunday'">
+                    Sunday
+                </h2>
+                <br><br><br><br><br><br>
+            </div>
+        </div>
+    </div>
+</div>

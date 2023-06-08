@@ -1,0 +1,34 @@
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+    box-shadow: 0 0 13px #ff000021;
+}
+.container {
+    color:#0C090A;
+    background-color: darkgrey;
+}
+#heading {
+    padding: 0px 20px;
+    margin: 30px;
+    margin-left: 150px;
+    background-color: linen;
+}
+label {
+    color: #400418;
+    background-color: rgb(231, 226, 219);
+    border: double black;
+    border-radius: 50px;
+    padding: 5px 60px;
+    margin: 10px 0px;
+}
+input {
+    color: #1e4053;
+    background-color: #E6E6FA;
+    border-radius: 30px;
+}
+select {
+    margin-left: 80px;
+}
+form {
+    padding: 20px;
+    margin: 10px;
+}

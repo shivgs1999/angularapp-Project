@@ -1,0 +1,35 @@
+#assign{
+    background-color: bisque;
+    border: double lightsalmon;
+    margin: 10px;
+    padding: 20px;
+
+}
+.container1{
+      background-color: darksalmon;
+      margin: 20px;
+      padding: 10px;
+}
+h3{
+    background-color: lightcyan;
+    color: crimson;
+    border: dashed lightgray;
+    margin: 10px 20px;
+    padding: 5px 10px;
+    border-radius: 30px;
+}
+.chkbx{
+    margin-right: 20px;
+}
+li{
+    color: black;
+    border: solid lightseagreen;
+    border-radius: 30px;
+    display: inline-block;
+    width: max-content;
+    margin-right: 10px;
+    padding: 0px 20px;
+}
+.container3{
+    background-color: lightgoldenrodyellow;
+}

@@ -1,0 +1,14 @@
+.select{
+    background-color: lightseagreen;
+    margin-top: 50px;
+    margin-left: 50px;
+    position: relative;
+    border-radius: 1px;
+    box-shadow: 7px 5px 8px;
+    width: 190px;
+    height: 250px;
+}
+.sele{
+    margin-top: 60px;
+    position: relative;
+}

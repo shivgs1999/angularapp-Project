@@ -1,0 +1,29 @@
+<div class="center">
+    <h6 class="search-header">Search for Title</h6>
+    <div class="search-container">
+      <input type="text" [(ngModel)]="searchTerm" placeholder="Search Title" class="search-input">
+      <button class="search-button" (click)="onSearchClick()" >Search</button>
+    </div>
+  </div> 
+    <table class="table table-striped border border-primary">
+        <thead>
+            <tr class="border border-primary">
+                <th class="border border-primary"> Sr No. </th>
+                <th class="border border-primary"> Title </th>
+                <th class="border border-primary"> PageID </th>
+                <th class="border border-primary"> Size </th>
+                <th class="border border-primary"> WordCount </th>
+                <th class="border border-primary"> Snippet </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let dd of data; let i = index;">
+                <td class="border border-primary">{{i + 1}}</td>
+                <td class="border border-primary">{{dd.title}}</td>
+                <td class="border border-primary">{{dd.pageid}}</td>
+                <td class="border border-primary">{{dd.size}}</td>
+                <td class="border border-primary">{{dd.wordcount}}</td>
+                <td class="border border-primary">{{dd.snippet}}</td>
+            </tr>
+        </tbody>
+    </table>

@@ -1,0 +1,15 @@
+<!-- <p>login works!</p>
+<button class="btn btn-success" (click)="GotoProduct()">
+    Goto Product
+</button> -->
+<form>
+    <div class="form-group">
+        <label for="email">Email Address</label>
+        <input #uname type="email" class="form-control" id="email" placeholder="Enter email address">
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input #pwd type="password" class="form-control" id="password" placeholder="Enter password">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="checkUser(uname.value, pwd.value)" >Login</button>
+</form>
