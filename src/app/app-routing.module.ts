@@ -8,6 +8,7 @@ import { PostlistComponent } from './postlist/postlist.component';
 import { PostdetailsComponent } from './postdetails/postdetails.component';
 import { TempletformComponent } from './templetform/templetform.component';
 import { AuthGuard } from './auth.guard';
+import { PipeComponent } from './pipe/pipe.component';
 
 
 
@@ -19,6 +20,7 @@ const routes : Routes = [
   {path: 'product', canActivate: [AuthGuard], loadChildren: './product/products.module#ProductsModule'},
   {path: 'posts',component: PostlistComponent},
   {path: 'postdetails/:id', component: PostdetailsComponent},
+  {path: 'pipe', component: PipeComponent},
   {path: 'templet', component:TempletformComponent},
 
    // Single router Outlet

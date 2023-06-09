@@ -49,6 +49,8 @@ import { WikipediaComponent } from './wikipedia/wikipedia.component';
 import { PostlistComponent } from './postlist/postlist.component';
 import { PostdetailsComponent } from './postdetails/postdetails.component';
 import { UtilityModule } from './model/utility/utility.module';
+import { PipeComponent } from './pipe/pipe.component';
+import { FilterPipe } from './filter.pipe';
 
 
 @NgModule({
@@ -90,6 +92,8 @@ import { UtilityModule } from './model/utility/utility.module';
     WikipediaComponent,
     PostlistComponent,
     PostdetailsComponent,
+    PipeComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
