@@ -7,7 +7,6 @@ import { TestComponent } from './test/test.component';
 import { DatabindingComponent } from './databinding/databinding.component';
 import { Test2Component } from './test2/test2.component';
 import { StudentComponent } from './student/student.component';
-import { PassgenratorComponent } from './passgenrator/passgenrator.component';
 import { NgifComponent } from './ngif/ngif.component';
 import { NgforComponent } from './ngfor/ngfor.component';
 import { NgswitchComponent } from './ngswitch/ngswitch.component';
@@ -51,6 +50,8 @@ import { PostdetailsComponent } from './postdetails/postdetails.component';
 import { UtilityModule } from './model/utility/utility.module';
 import { PipeComponent } from './pipe/pipe.component';
 import { FilterPipe } from './filter.pipe';
+import { PassgenratorComponent } from './passgenrator/passgenrator.component';
+import { HooksComponent } from './hooks/hooks.component';
 
 
 @NgModule({
@@ -60,13 +61,13 @@ import { FilterPipe } from './filter.pipe';
     DatabindingComponent,
     Test2Component,
     StudentComponent,
-    PassgenratorComponent,
     NgifComponent,
     NgforComponent,
     NgswitchComponent,
     NgforAssignComponent,
     NgstyleComponent,
     NgclassComponent,
+    PassgenratorComponent,
     AssigndirictiveComponent,
     TempletformComponent,
     RagistrationformComponent,
@@ -94,8 +95,10 @@ import { FilterPipe } from './filter.pipe';
     PostdetailsComponent,
     PipeComponent,
     FilterPipe,
+    HooksComponent,
   ],
   imports: [
+    
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -112,7 +115,7 @@ import { FilterPipe } from './filter.pipe';
     MatIconModule,
     HttpClientModule,
     MatSidenavModule,
-    UtilityModule
+    UtilityModule,
   ],
   // we Register Our Services in Provider Properties. 
   // will create single Instance of Register Service

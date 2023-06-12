@@ -40,6 +40,17 @@ export class PipeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
+
+    AddProduct(product) {
+      this.productArr.push({
+        sno: 5, 
+        name: product.value,
+        price: '117000 Rs',
+        availability : 'Not Available'
+      })
+    }
+  
 
 }

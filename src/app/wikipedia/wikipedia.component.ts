@@ -8,23 +8,31 @@ import { WikipediaService } from '../services/wikipedia.service';
 })
 export class WikipediaComponent implements OnInit {
 
-  data = [];
-  searchTerm: string = '';
+  searchQuery: string;
+  searchData: any = {};
+
 
   constructor(private wikiServise: WikipediaService) { }
 
   ngOnInit() {
+// Initialize the searchQuery
+this.searchQuery = '';
+this.fetchData();
+}
 
-    this.wikiServise.getData().subscribe((res: any) => {
-      this.data = res.query.search;
-      console.log('Api Data is ', this.data );
-    });
-
-    // onSearchClick() {
-    //   this.wikiServise.searchTerm = this.searchTerm;
-    //   this.wikiServise.getData().subscribe((response: any) => {
-    //     this.data = response.data.map((item: any) => item.images);
-    //   });
+fetchData() {
+this.wikiServise.getData(this.searchQuery).subscribe(
+  (response) => {
+    this.searchData = response;
+    console.log(this.searchData);
+  },
+  (error) => {
+    console.log(error);
   }
-  
+);
+}
+
+search() {
+this.fetchData();
+  }
 }

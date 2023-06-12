@@ -12,7 +12,7 @@ export class PassgenratorComponent implements OnInit {
   includeNumbers = false;
   includeSymbols = false;
   password = '';
-  constructor() { }
+  constructor() { } 
 
   ngOnInit() {
   }

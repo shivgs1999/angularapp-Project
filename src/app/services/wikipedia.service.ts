@@ -1,22 +1,25 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WikipediaService {
+  wikiURL = 'https://en.wikipedia.org/w/api.php';
 
-  searchTerm = ''
-  wikiURL = 'https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&utf8=1&srsearch=space&origin=*';
-  wikiURL2 = 'https://en.wikipedia.org/w/api.php/?action=query,&format=json,&list=search,&utf8=1,&srsearch=&space, origin=*';
   constructor(private httpClient: HttpClient) { }
 
-  getData (){
-    return this.httpClient.get(this.wikiURL)
-  }
+  getData(searchQuery: string) {
+    let params = new HttpParams();
+    params = params.append('action', 'query');
+    params = params.append('format', 'json');
+    params = params.append('list', 'search');
+    params = params.append('utf8', '1');
+    params = params.append('srsearch', searchQuery);
+    params = params.append('origin', '*');
 
-  searchTitle() {
-    const apiUrl = `${this.wikiURL2}&q=${this.searchTerm}`; // Add this line
-    return this.httpClient.get(apiUrl);
-  }
+    return this.httpClient.get(this.wikiURL, { params: params });
+    
+  }
 }
+

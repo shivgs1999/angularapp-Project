@@ -11,23 +11,35 @@
   <div> {{ 15 + 13 }} </div>
 
   <div> {{getName()}}</div>
-  // Property Binding 
+  // Property Binding
   <!-- <div>
     <img [src]="imgURL" alt="" class="imgurl">
   </div> -->
 
-  // Event binding 
+  // Event binding
 
   <input (blur)="changeImage($event)" [value]="imgURL">
   <br><br>
   <button (click)="show()"> Click Me !! </button>
   <br><br>
-     
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="> 
 
+  <img width="300" alt="Angular Logo"
+    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
 
+    <nav>
+      <ul class="nav nav-tabs">
+        <li class="nav-item"><a routerLinkActive="active myclass" routerLink="login" class="nav-link">Login</a></li>
+        <li class="nav-item"><a routerLinkActive="active myclass" routerLink="product" class="nav-link">Product</a></li>
+        <li class="nav-item"><a routerLinkActive="active myclass" routerLink="posts" class="nav-link">Posts</a></li>
+        <li class="nav-item"><a routerLinkActive="active myclass" routerLink="pipe" class="nav-link">Pipe</a></li>
+        <li class="nav-item"><a routerLinkActive="active myclass" routerLink="about-us" class="nav-link">About Us</a></li>
+        <li class="nav-item"><a routerLinkActive="active myclass" routerLink="contact-us" class="nav-link">Contact Us</a></li>
 
-<!--  
+      </ul>
+    </nav>
+    <router-outlet></router-outlet>
+
+  <!--  
 </div>
 <h2>Here are some links to help you start: </h2>
 <ul>
@@ -62,72 +74,72 @@
 <button class="btn btn-success" (click)="getUserData()">GetUser Data</button>  -->
 
 
-<!-- <hr>
+  <!-- <hr>
 <app-passgenrator></app-passgenrator> -->
-<!-- <hr>
+  <!-- <hr>
 <app-test2></app-test2> -->
 
-<!-- <hr>
+  <!-- <hr>
 <app-ngif></app-ngif> -->
 
-<!-- <hr>
+  <!-- <hr>
 <app-ngfor></app-ngfor> -->
 
-<!-- <hr>
+  <!-- <hr>
 <app-ngswitch></app-ngswitch> -->
 
-<!-- <hr>
+  <!-- <hr>
 <app-ngfor-assign></app-ngfor-assign> -->
 
-<!-- <hr>
+  <!-- <hr>
 <app-ngstyle></app-ngstyle> -->
 
-<!-- <hr>
+  <!-- <hr>
 <app-ngclass></app-ngclass> -->
 
-<!-- <hr>
+  <!-- <hr>
 <app-assigndirictive></app-assigndirictive>  -->
 
-<!-- <hr>
+  <!-- <hr>
 <app-templetform></app-templetform> -->
 
-<!-- <hr>
+  <!-- <hr>
 <app-ragistrationform></app-ragistrationform>  -->
 
-<!-- <hr>
+  <!-- <hr>
 <app-reactiveform></app-reactiveform> -->
 
-<!-- <hr>
+  <!-- <hr>
 <app-reactiveform-assign></app-reactiveform-assign> -->
 
-<!-- <hr>
+  <!-- <hr>
 <app-service1></app-service1> -->
 
-<!-- <hr>
+  <!-- <hr>
 <app-service2></app-service2> -->
 
-<!-- <hr>
+  <!-- <hr>
 <app-ngfor></app-ngfor> -->
 
-<!-- <hr>
+  <!-- <hr>
 <app-post></app-post> -->
 
-<!-- <hr>
+  <!-- <hr>
 <app-todo></app-todo>  -->
 
-<!-- <hr>
+  <!-- <hr>
 <app-state></app-state> -->
 
-<!-- <hr>
+  <!-- <hr>
 <app-rapidapi></app-rapidapi>   -->
 
-<!-- <hr>
+  <!-- <hr>
 <app-cricketinfo></app-cricketinfo> -->
 
-<!-- <hr>
+  <!-- <hr>
 <app-gif></app-gif> -->
 
-<!-- 
+  <!-- 
   <hr> 
   <div style="text-align: center;">
     <div class="row">
@@ -149,24 +161,17 @@
   </div>
 -->
 
-  <hr>
-  <nav>
-    <ul class="nav nav-tabs">
-      <li class="nav-item"><a routerLinkActive="active myclass" routerLink="about-us" class="nav-link">About Us</a></li>
-      <li class="nav-item"><a routerLinkActive="active myclass" routerLink="contact-us" class="nav-link">Contact Us</a></li>
-      <li class="nav-item"><a routerLinkActive="active myclass" routerLink="product" class="nav-link">Product</a></li>
-      <li class="nav-item"><a routerLinkActive="active myclass" routerLink="posts" class="nav-link">Posts</a></li>
-      <li class="nav-item"><a routerLinkActive="active myclass" routerLink="templet" class="nav-link">Login</a></li>
-      <li class="nav-item"><a routerLinkActive="active myclass" routerLink="pipe" class="nav-link">Pipe</a></li>
-    </ul>
-  </nav> 
+  <!-- <hr>
+  <app-wikipedia></app-wikipedia> -->
 
-  
+  <app-hooks [parentData]="data"></app-hooks>
+  <button (click)="changecolor()">Change color</button>
+
+
 
   <!-- <hr>
 <app-ngclass></app-ngclass> -->
 
-<!-- <hr>
-<app-wikipedia></app-wikipedia> -->
 
-  <router-outlet></router-outlet>
+
+  
