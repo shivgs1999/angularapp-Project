@@ -9,6 +9,7 @@ import { PostdetailsComponent } from './postdetails/postdetails.component';
 import { TempletformComponent } from './templetform/templetform.component';
 import { AuthGuard } from './auth.guard';
 import { PipeComponent } from './pipe/pipe.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 
 
@@ -21,6 +22,7 @@ const routes : Routes = [
   {path: 'posts',component: PostlistComponent},
   {path: 'postdetails/:id', component: PostdetailsComponent},
   {path: 'pipe', component: PipeComponent},
+  {path: 'rxjs', component: RxjsComponent},
   {path: 'templet', component:TempletformComponent},
 
    // Single router Outlet
@@ -48,7 +50,7 @@ const routes : Routes = [
 })
 export class AppRoutingModule {
   constructor(){
-    console.log('App Routing module Called');
+   // console.log('App Routing module Called');
     
   }
  }

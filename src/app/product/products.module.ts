@@ -34,6 +34,6 @@ const prodRoutes : Routes = [
 export class ProductsModule { 
 
   constructor() {
-    console.log('ProductsModule called');
+   // console.log('ProductsModule called');
   }
 }

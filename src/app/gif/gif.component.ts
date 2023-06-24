@@ -27,4 +27,4 @@ export class GifComponent implements OnInit {
       this.gifs = response.data.map((item: any) => item.images);
     });
   }
-}  
+}   

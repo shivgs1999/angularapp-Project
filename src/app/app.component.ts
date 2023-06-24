@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { ServicesService } from "./services/services.service";
 import { UserService } from "./services/user.service";
 import { FirebaseService } from "./services/firebase.service";
+import { NewpostService } from "./services/newpost.service";
 
 @Component({
   selector: "app-root",
@@ -13,7 +14,7 @@ export class AppComponent {
   age;
   showAge;
   // injecct the service
-  constructor(
+  constructor(private newpostService:NewpostService,
     private firebaseService: FirebaseService,
     private myService: ServicesService,
     private UserService: UserService
@@ -28,6 +29,7 @@ export class AppComponent {
   project = "Basic Angular Application";
   name = "Shivam";
   lastName = "Suradkar";
+  isDestory: boolean = true;
   getName() {
     return this.lastName;
   }
@@ -56,5 +58,9 @@ export class AppComponent {
 
   changecolor() {
     this.data = "blue";
+  }
+
+  OnDestroy() {
+    this.isDestory = false;
   }
 }

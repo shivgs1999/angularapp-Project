@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TodoService } from '../services/todo.service';
 import { HttpClient } from '@angular/common/http';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-todo',
@@ -9,9 +10,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TodoComponent implements OnInit {
 
+  subscription: Subscription;
   todoList:any = [];
   // inject the todo Service
   constructor(private todoServise: TodoService, private httpClient: HttpClient) { }
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
 
   ngOnInit() {
     this.getTodos();
@@ -23,14 +28,14 @@ export class TodoComponent implements OnInit {
       title: 'Nikita'
     }
 
-    this.todoServise.create(todo).subscribe(res => {
+   this.subscription = this.todoServise.create(todo).subscribe(res => {
       console.log('todo Create', res);
       this.getTodos();
     })
   }
 
   getTodos(){
-    this.todoServise.list().subscribe(res => {
+    this.subscription = this.todoServise.list().subscribe(res => {
      this.todoList = res;
      console.log('get todo list',this.todoList);
      
@@ -44,7 +49,7 @@ export class TodoComponent implements OnInit {
       id: new Date().getTime(),
       title: 'edited Todo'
     }
-    this.todoServise.update(todo.id, data).subscribe(res => {
+    this.subscription = this.todoServise.update(todo.id, data).subscribe(res => {
       this.getTodos();
     }, err => {
       console.log(`error occured`);
@@ -53,7 +58,7 @@ export class TodoComponent implements OnInit {
   }
 
   deleteTodo(id:any) {
-    this.todoServise.delete(id).subscribe((res) => {
+    this.subscription = this.todoServise.delete(id).subscribe((res) => {
       this.getTodos();
     }, (error => {
       console.log(`error Occured`, error );

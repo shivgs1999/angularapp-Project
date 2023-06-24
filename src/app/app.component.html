@@ -12,9 +12,9 @@
 
   <div> {{getName()}}</div>
   // Property Binding
-  <!-- <div>
+  <div>
     <img [src]="imgURL" alt="" class="imgurl">
-  </div> -->
+  </div>
 
   // Event binding
 
@@ -34,12 +34,13 @@
         <li class="nav-item"><a routerLinkActive="active myclass" routerLink="pipe" class="nav-link">Pipe</a></li>
         <li class="nav-item"><a routerLinkActive="active myclass" routerLink="about-us" class="nav-link">About Us</a></li>
         <li class="nav-item"><a routerLinkActive="active myclass" routerLink="contact-us" class="nav-link">Contact Us</a></li>
+        <li class="nav-item"><a routerLinkActive="active myclass" routerLink="rxjs" class="nav-link">Rxjs</a></li>
 
       </ul>
-    </nav>
+    </nav> 
     <router-outlet></router-outlet>
 
-  <!--  
+   
 </div>
 <h2>Here are some links to help you start: </h2>
 <ul>
@@ -71,7 +72,7 @@
 <button class="btn btn-primary" (click)="ageCalculator()">Calculate Age</button>
 <p *ngIf="age">Today You are {{showAge}} Years Old</p>
 <hr>
-<button class="btn btn-success" (click)="getUserData()">GetUser Data</button>  -->
+<button class="btn btn-success" (click)="getUserData()">GetUser Data</button> 
 
 
   <!-- <hr>
@@ -98,18 +99,18 @@
 <app-ngclass></app-ngclass> -->
 
   <!-- <hr>
-<app-assigndirictive></app-assigndirictive>  -->
+<app-assigndirictive></app-assigndirictive> 
 
-  <!-- <hr>
-<app-templetform></app-templetform> -->
+  <hr>
+<app-templetform></app-templetform>
 
-  <!-- <hr>
-<app-ragistrationform></app-ragistrationform>  -->
+  <hr>
+<app-ragistrationform></app-ragistrationform> 
 
-  <!-- <hr>
-<app-reactiveform></app-reactiveform> -->
+  <hr>
+<app-reactiveform></app-reactiveform>
 
-  <!-- <hr>
+  <hr>
 <app-reactiveform-assign></app-reactiveform-assign> -->
 
   <!-- <hr>
@@ -131,16 +132,16 @@
 <app-state></app-state> -->
 
   <!-- <hr>
-<app-rapidapi></app-rapidapi>   -->
+<app-rapidapi></app-rapidapi>  
 
-  <!-- <hr>
-<app-cricketinfo></app-cricketinfo> -->
+  <hr>
+<app-cricketinfo></app-cricketinfo>
 
-  <!-- <hr>
+  <hr>
 <app-gif></app-gif> -->
 
-  <!-- 
-  <hr> 
+  
+  <!-- <hr> 
   <div style="text-align: center;">
     <div class="row">
       <div class="col-md-6">
@@ -158,20 +159,27 @@
         <app-comp4></app-comp4>
       </div>
     </div>
-  </div>
--->
+  </div> -->
+
 
   <!-- <hr>
   <app-wikipedia></app-wikipedia> -->
 
-  <app-hooks [parentData]="data"></app-hooks>
+  <!-- <app-hooks [parentData]="data">
+    <h1 #child>This is child content coming from parent component.</h1>  
+    </app-hooks>
+
+ 
   <button (click)="changecolor()">Change color</button>
+
+  <button class="btn btn-danger" (click)="OnDestroy()">Destroy Hooks Component</button> -->
 
 
 
   <!-- <hr>
 <app-ngclass></app-ngclass> -->
 
-
+<hr>
+<app-rxjs></app-rxjs>
 
   

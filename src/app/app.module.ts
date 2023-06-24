@@ -28,8 +28,7 @@ import { ReactiveformAssignComponent } from './reactiveform-assign/reactiveform-
 import { Service1Component } from './service1/service1.component';
 import { Service2Component } from './service2/service2.component';
 import { MatButtonModule, MatCheckboxModule, MatIconModule, MatSelectModule, MatSidenavModule } from '@angular/material';
-import { HttpClientModule } from '@angular/common/http';
-import { ServicesService } from './services/services.service';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { PostComponent } from './post/post.component';
 import { TodoComponent } from './todo/todo.component';
 import { RapidapiComponent } from './rapidapi/rapidapi.component';
@@ -52,6 +51,8 @@ import { PipeComponent } from './pipe/pipe.component';
 import { FilterPipe } from './filter.pipe';
 import { PassgenratorComponent } from './passgenrator/passgenrator.component';
 import { HooksComponent } from './hooks/hooks.component';
+import { HeadersInterceptorService } from './interceptor/headers-interceptor.service';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 
 @NgModule({
@@ -96,6 +97,7 @@ import { HooksComponent } from './hooks/hooks.component';
     PipeComponent,
     FilterPipe,
     HooksComponent,
+    RxjsComponent,
   ],
   imports: [
     
@@ -119,12 +121,16 @@ import { HooksComponent } from './hooks/hooks.component';
   ],
   // we Register Our Services in Provider Properties. 
   // will create single Instance of Register Service
-  providers: [ServicesService],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: HeadersInterceptorService,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule {
   constructor( ) {
-    console.log('App Module Called.');
+   // console.log('App Module Called.');
     
   }
  }

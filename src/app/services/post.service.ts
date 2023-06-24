@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, forkJoin } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -31,5 +31,13 @@ export class PostService {
    
    CreatePost(body: any) : Observable<any> {
     return this.httpClient.post(this.postUrl, body);
+   }
+
+   public requestDataFromMultipleSources() : Observable<any[]>{
+     let response1 = this.httpClient.get(this.postUrl);
+     let response2 = this.httpClient.get('https://jsonplaceholder.typicode.com/users');
+     let response3 = this.httpClient.get('https://jsonplaceholder.typicode.com/comments');
+
+     return forkJoin([response1,response2,response3]) 
    }
 }
